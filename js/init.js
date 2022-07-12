@@ -1,7 +1,17 @@
 const player = new Hero();
 let ghosts = [];
+let killCounter = 0;
+let deathCounter = 3;
 
-function intro() {}
+function intro() {
+  const modal = document.getElementById("modal");
+  const startBtn = document.getElementsByClassName("start-area")[0];
+
+  startBtn.addEventListener("click", (e) => {
+    modal.style.display = "none";
+    init();
+  });
+}
 
 function init() {
   document.addEventListener(
@@ -55,8 +65,16 @@ function updateAllghosts() {
   ghosts.forEach((el, idx) => {
     if (!el.isDead) {
       el.move(player);
-    } else {
+    }
+    if (el.isKill) {
+      killCounter += 1;
       ghosts.splice(idx, 1);
+      console.log(killCounter);
+    }
+    if (el.isDead) {
+      deathCounter -= 1;
+      ghosts.splice(idx, 1);
+      console.log(deathCounter);
     }
   });
 
@@ -64,4 +82,3 @@ function updateAllghosts() {
 }
 
 intro();
-//init();

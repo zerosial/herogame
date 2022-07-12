@@ -32,3 +32,77 @@
 #hero.right {
   background-position: -105px;
 }
+
+#modal.modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 10;
+}
+
+#modal .modal-window {
+  background: rgba(15, 44, 67, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 800px;
+  height: 500px;
+  position: relative;
+  padding: 10px;
+  animation-name: start;
+  animation-duration: 2s;
+  animation-duration: leaner;
+}
+
+#modal .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 1px 1px 2px gray;
+  color: white;
+}
+
+#modal .title h2 {
+  display: inline;
+}
+
+#modal .start-area {
+  position: fixed;
+  bottom: 5%;
+  left: 45%;
+  width: 20%;
+  text-shadow: 1px 1px 2px rgb(11, 64, 179);
+  font-size: 50px;
+  color: rgb(36, 141, 207);
+}
+
+#modal .content {
+  margin-top: 20px;
+  padding: 0px 10px;
+  text-align: center;
+  text-shadow: 1px 1px 2px gray;
+  color: white;
+}
+
+@-webkit-keyframes start {
+  0% {
+    bottom: 200px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
