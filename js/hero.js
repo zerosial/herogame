@@ -1,21 +1,21 @@
 class Hero {
   constructor() {
-    this.heroElement = document.getElementById('hero');
-    this.left = Number(getComputedStyle(this.heroElement).left.split('px')[0]);
+    this.heroElement = document.getElementById("hero");
+    this.left = Number(getComputedStyle(this.heroElement).left.split("px")[0]);
 
-    this.speed = 10;
+    this.speed = 20;
     this.isRightKey = false;
     this.isLeftKey = false;
   }
 
   move(direction) {
     switch (direction) {
-      case 'right':
-        this.heroElement.className = 'right';
+      case "right":
+        this.heroElement.className = "right";
         this.setLeft(-this.speed);
         break;
-      case 'left':
-        this.heroElement.className = 'left';
+      case "left":
+        this.heroElement.className = "left";
         this.setLeft(this.speed);
         break;
       default:
@@ -23,7 +23,7 @@ class Hero {
   }
 
   stop() {
-    this.heroElement.className = 'face';
+    this.heroElement.className = "face";
   }
 
   setLeft(left) {
@@ -32,6 +32,6 @@ class Hero {
     if (newleft > BG_WIDTH - HERO_WIDTH || newleft < 0) return;
 
     this.left = newleft;
-    this.heroElement.style.left = this.left + 'px';
+    this.heroElement.style.left = this.left + "px";
   }
 }

@@ -26,7 +26,7 @@ class Ghost {
   }
 
   move(hero) {
-    this.top++;
+    this.top += 3;
 
     if (this.top > BG_HEIGHT - (HERO_HEIGHT + GHOST_HEIGHT)) {
       const ghostLeft = Number(this.ghostElement.style.left.split("px")[0]);

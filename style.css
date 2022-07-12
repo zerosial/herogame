@@ -1,3 +1,4 @@
+/* 인게임 Css */
 #bg {
   position: relative;
 
@@ -33,6 +34,7 @@
   background-position: -105px;
 }
 
+/* 스타트 창 Css */
 #modal.modal-overlay {
   width: 100%;
   height: 100%;
@@ -105,4 +107,18 @@
   100% {
     bottom: 0px;
   }
+}
+
+/* 라이프, 카운트, 시간 틀 CSS */
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  width: 800px;
+  background: rgba(255, 255, 255, 0.4);
+  position: fixed;
+  color: #080808;
+  letter-spacing: 0;
+  font-size: 30px;
 }

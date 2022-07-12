@@ -1,7 +1,11 @@
 const player = new Hero();
+const life = document.getElementById("life");
+const time = document.getElementById("time");
+const score = document.getElementById("score");
 let ghosts = [];
 let killCounter = 0;
 let deathCounter = 3;
+let limitTime = 60;
 
 function intro() {
   const modal = document.getElementById("modal");
@@ -33,6 +37,15 @@ function init() {
   setInterval(function () {
     initGhost();
   }, 2000);
+
+  setInterval(function () {
+    limitTime -= 1;
+    time.innerText = limitTime;
+    if (limitTime === 0) {
+      alert(`게임 오버 점수는 ${killCounter}입니다.`);
+      window.location.reload();
+    }
+  }, 1000);
 
   window.requestAnimationFrame(updateAllghosts);
 }
@@ -69,12 +82,16 @@ function updateAllghosts() {
     if (el.isKill) {
       killCounter += 1;
       ghosts.splice(idx, 1);
-      console.log(killCounter);
+      score.innerText = killCounter;
     }
     if (el.isDead) {
       deathCounter -= 1;
       ghosts.splice(idx, 1);
-      console.log(deathCounter);
+      life.innerText = deathCounter;
+      if (deathCounter === 0) {
+        alert(`게임 오버 점수는 ${killCounter}입니다.`);
+        window.location.reload();
+      }
     }
   });
 
