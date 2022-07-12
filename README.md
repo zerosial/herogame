@@ -1,13 +1,14 @@
 # Hero game
 
 <p align="center">
+  https://zerosial.github.io/herogame/
+  <br>
   <br>
   <img src="./images/common/logo-sample.png">
   <img src="./images/common/logo-sample2.png">
   <br>
 </p>
 
-목차
 
 ## 프로젝트 소개
 
