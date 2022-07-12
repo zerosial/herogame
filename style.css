@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+
 /* 인게임 Css */
 #bg {
   position: relative;
@@ -36,6 +38,7 @@
 
 /* 스타트 창 Css */
 #modal.modal-overlay {
+  font-family: "Gugi", cursive;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -112,6 +115,7 @@
 /* 라이프, 카운트, 시간 틀 CSS */
 
 .header {
+  font-family: "Gugi", cursive;
   display: flex;
   justify-content: space-around;
   height: 50px;

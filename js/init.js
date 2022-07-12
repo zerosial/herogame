@@ -4,7 +4,7 @@ const time = document.getElementById("time");
 const score = document.getElementById("score");
 let ghosts = [];
 let killCounter = 0;
-let deathCounter = 3;
+let deathCounter = 5;
 let limitTime = 60;
 
 function intro() {
@@ -40,7 +40,7 @@ function init() {
 
   setInterval(function () {
     limitTime -= 1;
-    time.innerText = limitTime;
+    time.innerText = `시간 : ${limitTime}`;
     if (limitTime === 0) {
       alert(`게임 오버 점수는 ${killCounter}입니다.`);
       window.location.reload();
@@ -82,12 +82,14 @@ function updateAllghosts() {
     if (el.isKill) {
       killCounter += 1;
       ghosts.splice(idx, 1);
-      score.innerText = killCounter;
+      score.innerText = `스코어 : ${killCounter}`;
     }
     if (el.isDead) {
+      const soundEffect = new Audio("./audio/life.wav");
+      soundEffect.play();
       deathCounter -= 1;
       ghosts.splice(idx, 1);
-      life.innerText = deathCounter;
+      life.innerText = `라이프 : ${deathCounter}`;
       if (deathCounter === 0) {
         alert(`게임 오버 점수는 ${killCounter}입니다.`);
         window.location.reload();
